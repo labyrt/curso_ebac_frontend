@@ -1,34 +1,35 @@
+/* RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* CORES PRINCIPAIS */
+
 :root {
-  --azul: #1e90ff;
   --amarelo: #ffd60a;
-  --vermelho: #ff4d4f;
+  --vermelho: #ff3b3b;
   --verde: #2ecc71;
-  --texto: #1f2937;
-  --card: #ffffff;
+  --azul: #1e90ff;
+  --laranja: #ff8c00;
 }
+
+/* BODY */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--texto);
   background: #f4f6f8;
+  color: #333;
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+/* TOPO */
 
 .topbar {
   background: #111827;
   padding: 24px 0;
-  border-bottom: 5px solid var(--azul);
+  border-bottom: 6px solid var(--azul);
 }
 
 .topbar h1 {
@@ -38,21 +39,33 @@ body {
 }
 
 .topbar p {
-  color: #e5e7eb;
-  font-size: 1rem;
+  color: white;
 }
+
+/* CONTAINER */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* SEÇÕES */
 
 .news-section {
-  padding: 28px 0;
+  padding: 30px 0;
 }
+
+/* TÍTULOS DAS SEÇÕES */
 
 .news-section h2 {
-  font-size: 1.7rem;
-  margin-bottom: 18px;
-  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-/* cores diferentes e vivas para cada seção */
+/* CORES DOS TÍTULOS */
+
 #esportes h2 {
   color: var(--amarelo);
 }
@@ -65,20 +78,56 @@ body {
   color: var(--verde);
 }
 
+#economia h2 {
+  color: var(--azul);
+}
+
+#educacao h2 {
+  color: var(--laranja);
+}
+
+/* FUNDO DAS SEÇÕES */
+
+#esportes {
+  background-color: #fffbea;
+}
+
+#entretenimento {
+  background-color: #fff1f2;
+}
+
+#tecnologia {
+  background-color: #effaf4;
+}
+
+#economia {
+  background-color: #eef6ff;
+}
+
+#educacao {
+  background-color: #fff4e6;
+}
+
+/* GRID DE ARTIGOS */
+
 .articles {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
 }
 
+/* CARD */
+
 .card {
-  background: var(--card);
+  background: white;
   width: calc(50% - 9px);
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
+/* IMAGEM */
 
 .card img {
   width: 100%;
@@ -87,34 +136,31 @@ body {
   display: block;
 }
 
+/* CONTEÚDO */
+
 .card-content {
   padding: 16px;
 }
 
+/* TÍTULO DO CARD */
+
 .card h3 {
-  color: #0f172a;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #111827;
 }
+
+/* TEXTO */
 
 .card p {
   color: #374151;
   line-height: 1.5;
 }
 
-#esportes {
-  background: #fffbea;
-}
-
-#entretenimento {
-  background: #fff1f2;
-}
-
-#tecnologia {
-  background: #effaf4;
-}
+/* RESPONSIVO */
 
 @media (max-width: 768px) {
+
   .card {
     width: 100%;
   }
@@ -122,4 +168,5 @@ body {
   .topbar h1 {
     font-size: 1.6rem;
   }
+
 }
