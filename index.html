@@ -1,0 +1,322 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Vision - Bootstrap Project</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-weight: 700;
+        }
+
+        .carousel-item img {
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .card {
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            color: white;
+            border-radius: 24px;
+            padding: 60px 30px;
+        }
+
+        footer {
+            background: #212529;
+            color: white;
+            padding: 24px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                Tech Vision
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carousel">Carousel</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Cards</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">
+                Bootstrap Landing Page
+            </h1>
+
+            <p class="lead mb-4">
+                Projeto desenvolvido utilizando Bootstrap 5 com layout responsivo,
+                carousel, grid system e cards.
+            </p>
+
+            <a href="#produtos" class="btn btn-light btn-lg">
+                Explorar conteúdo
+            </a>
+        </div>
+    </section>
+
+    <!-- CAROUSEL -->
+
+    <section id="carousel" class="container my-5">
+
+        <h2 class="section-title text-center">
+            Destaques
+        </h2>
+
+        <div id="carouselPrincipal" class="carousel slide shadow rounded overflow-hidden">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+                        class="d-block w-100"
+                        alt="">
+                </div>
+
+                <div class="carousel-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80"
+                        class="d-block w-100"
+                        alt="">
+                </div>
+
+                <div class="carousel-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80"
+                        class="d-block w-100"
+                        alt="">
+                </div>
+
+            </div>
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselPrincipal"
+                data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselPrincipal"
+                data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- CARDS -->
+
+    <section id="produtos" class="container my-5">
+
+        <h2 class="section-title text-center">
+            Soluções Tecnológicas
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/600/400?1" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Desenvolvimento Web</h5>
+                        <p class="card-text">
+                            Aplicações modernas construídas com tecnologias atuais.
+                        </p>
+                        <button class="btn btn-primary">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/600/400?2" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Computing</h5>
+                        <p class="card-text">
+                            Infraestrutura escalável e segura.
+                        </p>
+                        <button class="btn btn-primary">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/600/400?3" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Inteligência Artificial</h5>
+                        <p class="card-text">
+                            Soluções inteligentes para otimizar processos.
+                        </p>
+                        <button class="btn btn-primary">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/600/400?4" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Cyber Security</h5>
+                        <p class="card-text">
+                            Proteção e monitoramento de sistemas.
+                        </p>
+                        <button class="btn btn-primary">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/600/400?5" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile Apps</h5>
+                        <p class="card-text">
+                            Aplicativos Android e iOS com alta performance.
+                        </p>
+                        <button class="btn btn-primary">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/600/400?6" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Analytics</h5>
+                        <p class="card-text">
+                            Transforme dados em decisões estratégicas.
+                        </p>
+                        <button class="btn btn-primary">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section id="contato" class="container my-5">
+        <div class="cta text-center shadow">
+
+            <h2 class="display-6 fw-bold mb-3">
+                Vamos construir algo incrível?
+            </h2>
+
+            <p class="lead mb-4">
+                Entre em contato e descubra como transformar ideias em soluções digitais.
+            </p>
+
+            <button class="btn btn-light btn-lg">
+                Solicitar orçamento
+            </button>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">
+                © 2026 Tech Vision - Projeto Bootstrap EBAC
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
