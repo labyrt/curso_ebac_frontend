@@ -1,0 +1,22 @@
+@use 'variaveis' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: v.$fonte-principal;
+}
+
+body {
+  background-color: v.$cor-fundo;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: v.$container-max;
+  width: 100%;
+  margin: 0 auto;
+}
