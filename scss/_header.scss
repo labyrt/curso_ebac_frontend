@@ -1,0 +1,29 @@
+@use 'variaveis' as v;
+
+header {
+  background-color: v.$cor-header;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+}
+
+.menu {
+  display: flex;
+
+  li {
+    font-weight: bold;
+    margin-left: 24px;
+
+    a {
+      color: v.$cor-texto-claro;
+      text-decoration: none;
+    }
+  }
+}
