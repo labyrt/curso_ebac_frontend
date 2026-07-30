@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uma experiência interativa pelo universo de Avatar: A Lenda de Aang — as quatro nações, personagens e a jornada para restaurar o equilíbrio.">
+  <meta name="theme-color" content="#101719">
+  <title>Avatar — O Ciclo Continua</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Avenir-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Avenir-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/images/hero-poster.jpg" as="image">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-element="air">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader__orbit">
+      <span class="loader__dot loader__dot--air"></span>
+      <span class="loader__dot loader__dot--water"></span>
+      <span class="loader__dot loader__dot--earth"></span>
+      <span class="loader__dot loader__dot--fire"></span>
+    </div>
+    <p>O ciclo recomeça</p>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <canvas class="element-canvas" id="elementCanvas" aria-hidden="true"></canvas>
+
+  <header class="header" data-header>
+    <nav class="header__inner container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Avatar — início">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg>
+        </span>
+        <span class="brand__text">AVATAR<small>O CICLO CONTINUA</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menuPrincipal">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+
+      <div class="header__menu" id="menuPrincipal">
+        <a href="#jornada">A jornada</a>
+        <a href="#nacoes">As nações</a>
+        <a href="#personagens">Personagens</a>
+        <a href="#livros">Os livros</a>
+      </div>
+
+      <a class="header__cta" href="#elemento">Seu elemento <span aria-hidden="true">+</span></a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero__media">
+        <video
+          class="hero__video"
+          muted
+          loop
+          playsinline
+          poster="assets/images/hero-poster.jpg"
+          aria-hidden="true">
+          <source src="assets/video/avatar-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero__veil"></div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="hero__symbols" aria-hidden="true">
+        <svg class="hero__symbol hero__symbol--air" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg>
+        <svg class="hero__symbol hero__symbol--water" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#water"></use></svg>
+        <svg class="hero__symbol hero__symbol--earth" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#earth"></use></svg>
+        <svg class="hero__symbol hero__symbol--fire" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#fire"></use></svg>
+      </div>
+
+      <div class="hero__content container">
+        <p class="eyebrow reveal">Uma experiência pelos quatro elementos</p>
+        <h1 id="heroTitle" class="hero__title reveal">
+          <span>O último</span>
+          <strong>dobrador</strong>
+          <em>de ar</em>
+        </h1>
+        <p class="hero__intro reveal">Há cem anos, o mundo perdeu o equilíbrio. Agora, um garoto de doze anos precisa dominar os quatro elementos — e aprender o que significa ser o Avatar.</p>
+
+        <div class="hero__actions reveal">
+          <a class="button button--primary" href="#jornada"><span>Começar a jornada</span><b aria-hidden="true">v</b></a>
+          <button class="button button--ghost" type="button" data-open-video>
+            <span class="button__play" aria-hidden="true"></span>
+            Assistir ao vídeo
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__controls" role="group" aria-label="Controles do vídeo de fundo">
+        <button type="button" data-video-sound aria-pressed="false">
+          <span class="sound-icon" aria-hidden="true"></span>
+          <span data-sound-label>Ativar som</span>
+        </button>
+        <button type="button" data-video-pause aria-pressed="false">
+          <span aria-hidden="true" data-pause-icon>||</span>
+          <span data-pause-label>Pausar</span>
+        </button>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span></span><small>Explore</small></div>
+    </section>
+
+    <section class="prologue section" id="jornada">
+      <div class="container">
+        <div class="prologue__grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Livro zero · O chamado</p>
+            <h2>Quando o mundo mais precisava dele, <em>ele voltou.</em></h2>
+          </div>
+          <div class="prologue__copy reveal">
+            <p>Preso em um iceberg por um século, Aang desperta em um mundo transformado pela guerra. Ao lado de Katara, Sokka, Toph e muitos aliados improváveis, ele atravessa continentes para dominar os elementos sem abandonar sua natureza pacífica.</p>
+            <p>Mais do que uma história sobre poderes, <strong>Avatar</strong> é uma jornada sobre amizade, responsabilidade, identidade e a coragem de escolher um caminho diferente.</p>
+          </div>
+        </div>
+
+        <div class="facts">
+          <article class="fact reveal"><strong>03</strong><span>livros<br>elementais</span></article>
+          <article class="fact reveal"><strong>61</strong><span>episódios<br>na jornada</span></article>
+          <article class="fact reveal"><strong>04</strong><span>nações<br>conectadas</span></article>
+          <article class="fact reveal"><strong>100</strong><span>anos de<br>desequilíbrio</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cycle section" aria-label="O ciclo dos elementos">
+      <div class="container cycle__inner">
+        <div class="cycle__wheel reveal" aria-hidden="true">
+          <div class="cycle__ring cycle__ring--outer"></div>
+          <div class="cycle__ring cycle__ring--inner"></div>
+          <div class="cycle__center"></div>
+          <svg class="cycle__icon cycle__icon--air" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg>
+          <svg class="cycle__icon cycle__icon--water" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#water"></use></svg>
+          <svg class="cycle__icon cycle__icon--earth" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#earth"></use></svg>
+          <svg class="cycle__icon cycle__icon--fire" viewBox="0 0 120 120"><use href="assets/images/symbols.svg#fire"></use></svg>
+        </div>
+        <div class="cycle__copy reveal">
+          <p class="eyebrow">O ciclo do Avatar</p>
+          <h2>Água. Terra. Fogo. Ar.</h2>
+          <p>O Avatar renasce seguindo uma ordem ancestral. Cada vida carrega a experiência das anteriores e a missão de construir uma ponte entre o mundo físico e o mundo espiritual.</p>
+          <div class="cycle__sequence">
+            <span>Água</span><i>/</i><span>Terra</span><i>/</i><span>Fogo</span><i>/</i><span>Ar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nations section" id="nacoes">
+      <div class="container">
+        <div class="nations__header">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Um mundo, quatro formas de viver</p>
+            <h2>As quatro <em>nações</em></h2>
+          </div>
+          <p class="nations__lead reveal">Cada povo transformou seu elemento em cultura, arquitetura, filosofia e movimento. Selecione uma nação ou percorra a jornada completa.</p>
+        </div>
+
+        <nav class="nation-nav reveal" aria-label="Ir para uma nação">
+          <a href="#nomades-do-ar" data-nation-link="air">
+            <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg>
+            <span>Nômades do Ar</span>
+          </a>
+          <a href="#tribos-da-agua" data-nation-link="water">
+            <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#water"></use></svg>
+            <span>Tribos da Água</span>
+          </a>
+          <a href="#reino-da-terra" data-nation-link="earth">
+            <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#earth"></use></svg>
+            <span>Reino da Terra</span>
+          </a>
+          <a href="#nacao-do-fogo" data-nation-link="fire">
+            <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#fire"></use></svg>
+            <span>Nação do Fogo</span>
+          </a>
+        </nav>
+
+        <div class="nation-list">
+          <article class="nation nation--air" id="nomades-do-ar" data-nation="air">
+            <div class="nation__number" aria-hidden="true">01</div>
+            <div class="nation__art reveal">
+              <span class="nation__kanji" aria-hidden="true">气</span>
+              <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg>
+              <div class="nation__orb"></div>
+            </div>
+            <div class="nation__content reveal">
+              <p class="eyebrow">Liberdade · Espírito · Movimento</p>
+              <h3>Nômades do Ar</h3>
+              <p class="nation__description">Um povo pacífico, espiritual e desapegado, organizado ao redor de quatro templos elevados. Seus movimentos circulares evitam o confronto direto e transformam defesa em liberdade.</p>
+              <dl class="nation__details">
+                <div><dt>Territórios</dt><dd>Templos do Ar do Norte, Sul, Leste e Oeste</dd></div>
+                <div><dt>Dobra</dt><dd>Evasiva, veloz e baseada em redirecionamento</dd></div>
+                <div><dt>Representantes</dt><dd>Aang, Monge Gyatso e os nômades</dd></div>
+                <div><dt>Fonte</dt><dd>Bisões voadores</dd></div>
+              </dl>
+              <blockquote>Leve como o vento; firme apenas no propósito.</blockquote>
+            </div>
+          </article>
+
+          <article class="nation nation--water" id="tribos-da-agua" data-nation="water">
+            <div class="nation__number" aria-hidden="true">02</div>
+            <div class="nation__art reveal">
+              <span class="nation__kanji" aria-hidden="true">水</span>
+              <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#water"></use></svg>
+              <div class="nation__orb"></div>
+            </div>
+            <div class="nation__content reveal">
+              <p class="eyebrow">Mudança · Comunidade · Cura</p>
+              <h3>Tribos da Água</h3>
+              <p class="nation__description">Do gelo polar aos pântanos, seus povos prosperam pela cooperação. A dobra acompanha o fluxo da energia, alternando suavidade e força como as marés guiadas pela lua.</p>
+              <dl class="nation__details">
+                <div><dt>Territórios</dt><dd>Polos Norte e Sul e o Pântano Nebuloso</dd></div>
+                <div><dt>Dobra</dt><dd>Fluida, adaptável, ofensiva e curativa</dd></div>
+                <div><dt>Representantes</dt><dd>Katara, Sokka, Yue e Mestre Pakku</dd></div>
+                <div><dt>Fonte</dt><dd>Lua e oceano</dd></div>
+              </dl>
+              <blockquote>A força da água está em aceitar a mudança.</blockquote>
+            </div>
+          </article>
+
+          <article class="nation nation--earth" id="reino-da-terra" data-nation="earth">
+            <div class="nation__number" aria-hidden="true">03</div>
+            <div class="nation__art reveal">
+              <span class="nation__kanji" aria-hidden="true">土</span>
+              <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#earth"></use></svg>
+              <div class="nation__orb"></div>
+            </div>
+            <div class="nation__content reveal">
+              <p class="eyebrow">Substância · Resistência · Permanência</p>
+              <h3>Reino da Terra</h3>
+              <p class="nation__description">A maior e mais diversa das nações. De Omashu a Ba Sing Se, sua identidade nasce da capacidade de suportar, observar e agir no instante exato — sem ceder terreno.</p>
+              <dl class="nation__details">
+                <div><dt>Territórios</dt><dd>Ba Sing Se, Omashu e incontáveis províncias</dd></div>
+                <div><dt>Dobra</dt><dd>Direta, enraizada e de golpes decisivos</dd></div>
+                <div><dt>Representantes</dt><dd>Toph, Rei Bumi e Avatar Kyoshi</dd></div>
+                <div><dt>Fonte</dt><dd>Toupeiras-texugo</dd></div>
+              </dl>
+              <blockquote>Ouça o chão. Espere. Então permaneça inabalável.</blockquote>
+            </div>
+          </article>
+
+          <article class="nation nation--fire" id="nacao-do-fogo" data-nation="fire">
+            <div class="nation__number" aria-hidden="true">04</div>
+            <div class="nation__art reveal">
+              <span class="nation__kanji" aria-hidden="true">火</span>
+              <svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#fire"></use></svg>
+              <div class="nation__orb"></div>
+            </div>
+            <div class="nation__content reveal">
+              <p class="eyebrow">Poder · Vontade · Transformação</p>
+              <h3>Nação do Fogo</h3>
+              <p class="nation__description">Uma potência insular moldada pela disciplina e pela indústria. A guerra corrompeu sua ambição, mas a verdadeira dobra de fogo nasce da respiração, da vida e da energia interior.</p>
+              <dl class="nation__details">
+                <div><dt>Territórios</dt><dd>Arquipélago vulcânico e antigas colônias</dd></div>
+                <div><dt>Dobra</dt><dd>Explosiva, precisa e movida pela respiração</dd></div>
+                <div><dt>Representantes</dt><dd>Zuko, Iroh, Azula e os Guerreiros do Sol</dd></div>
+                <div><dt>Fonte</dt><dd>Dragões</dd></div>
+              </dl>
+              <blockquote>O fogo pode consumir — ou iluminar um novo caminho.</blockquote>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="characters section" id="personagens">
+      <div class="container">
+        <div class="characters__header">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Aliados, mestres e adversários</p>
+            <h2>Personagens que <em>mudaram o mundo</em></h2>
+          </div>
+          <p class="characters__lead reveal">Abra uma ficha para conhecer habilidades, personalidade e o arco de cada personagem.</p>
+        </div>
+
+        <div class="character-filters reveal" role="group" aria-label="Filtrar personagens">
+          <button class="is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="team" aria-pressed="false">Equipe Avatar</button>
+          <button type="button" data-filter="air" aria-pressed="false">Ar</button>
+          <button type="button" data-filter="water" aria-pressed="false">Água</button>
+          <button type="button" data-filter="earth" aria-pressed="false">Terra</button>
+          <button type="button" data-filter="fire" aria-pressed="false">Fogo</button>
+        </div>
+
+        <div class="character-grid">
+          <button class="character-card character-card--air reveal" type="button" data-character="aang" data-groups="team air" aria-label="Abrir ficha de Aang">
+            <span class="character-card__index">01</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#aang"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>O Avatar</small><strong>Aang</strong><span>Ar · todos os elementos</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--water reveal" type="button" data-character="katara" data-groups="team water" aria-label="Abrir ficha de Katara">
+            <span class="character-card__index">02</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#katara"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>A mestra</small><strong>Katara</strong><span>Água · cura</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--water reveal" type="button" data-character="sokka" data-groups="team water" aria-label="Abrir ficha de Sokka">
+            <span class="character-card__index">03</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#sokka"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>O estrategista</small><strong>Sokka</strong><span>Tribo da Água · guerreiro</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--earth reveal" type="button" data-character="toph" data-groups="team earth" aria-label="Abrir ficha de Toph">
+            <span class="character-card__index">04</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#toph"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>A imbatível</small><strong>Toph</strong><span>Terra · metal</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--fire reveal" type="button" data-character="zuko" data-groups="team fire" aria-label="Abrir ficha de Zuko">
+            <span class="character-card__index">05</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#zuko"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>O príncipe</small><strong>Zuko</strong><span>Fogo · espadas duplas</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--fire reveal" type="button" data-character="iroh" data-groups="fire" aria-label="Abrir ficha de Iroh">
+            <span class="character-card__index">06</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#iroh"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>O dragão do oeste</small><strong>Iroh</strong><span>Fogo · sabedoria</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--fire reveal" type="button" data-character="azula" data-groups="fire" aria-label="Abrir ficha de Azula">
+            <span class="character-card__index">07</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#azula"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>A prodígio</small><strong>Azula</strong><span>Fogo azul · relâmpago</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--earth reveal" type="button" data-character="suki" data-groups="team earth" aria-label="Abrir ficha de Suki">
+            <span class="character-card__index">08</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#suki"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>A guerreira Kyoshi</small><strong>Suki</strong><span>Terra · leques de guerra</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--air reveal" type="button" data-character="appa" data-groups="team air" aria-label="Abrir ficha de Appa">
+            <span class="character-card__index">09</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#appa"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>O bisão voador</small><strong>Appa</strong><span>Ar · companheiro</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+
+          <button class="character-card character-card--air reveal" type="button" data-character="momo" data-groups="team air" aria-label="Abrir ficha de Momo">
+            <span class="character-card__index">10</span>
+            <span class="character-card__portrait"><svg viewBox="0 0 320 420"><use href="assets/images/characters.svg#momo"></use></svg></span>
+            <span class="character-card__overlay"></span>
+            <span class="character-card__content"><small>O lêmure alado</small><strong>Momo</strong><span>Ar · caos adorável</span></span>
+            <span class="character-card__open" aria-hidden="true">+</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="books section" id="livros">
+      <div class="container">
+        <div class="books__header">
+          <div class="section-heading reveal">
+            <p class="eyebrow">A jornada em três atos</p>
+            <h2>Os três <em>livros</em></h2>
+          </div>
+          <p class="books__lead reveal">Da descoberta no gelo ao confronto sob o Cometa de Sozin, cada capítulo aproxima Aang do domínio — e de sua própria resposta.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="book book--water reveal">
+            <div class="book__spine"><span>01</span><i></i></div>
+            <div class="book__content">
+              <p class="eyebrow">20 episódios</p>
+              <h3>Livro Um: Água</h3>
+              <p>Aang é encontrado por Katara e Sokka. O grupo cruza o mundo rumo ao Polo Norte enquanto Zuko os persegue e a ameaça da Nação do Fogo se revela.</p>
+              <ul><li>O menino no iceberg</li><li>Templo do Ar do Sul</li><li>Cerco do Norte</li></ul>
+            </div>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="assets/images/symbols.svg#water"></use></svg>
+          </article>
+
+          <article class="book book--earth reveal">
+            <div class="book__spine"><span>02</span><i></i></div>
+            <div class="book__content">
+              <p class="eyebrow">20 episódios</p>
+              <h3>Livro Dois: Terra</h3>
+              <p>Toph se torna a mestra de Aang. Entre a perseguição de Azula, os segredos de Ba Sing Se e a busca por Appa, o equilíbrio parece mais distante.</p>
+              <ul><li>A bandida cega</li><li>A biblioteca</li><li>Encruzilhada do destino</li></ul>
+            </div>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="assets/images/symbols.svg#earth"></use></svg>
+          </article>
+
+          <article class="book book--fire reveal">
+            <div class="book__spine"><span>03</span><i></i></div>
+            <div class="book__content">
+              <p class="eyebrow">21 episódios</p>
+              <h3>Livro Três: Fogo</h3>
+              <p>Disfarçados em território inimigo, os amigos se preparam para o fim da guerra. Zuko muda de lado, Aang encontra seu caminho e o cometa chega.</p>
+              <ul><li>O dia do sol negro</li><li>Os mestres do fogo</li><li>O cometa de Sozin</li></ul>
+            </div>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="assets/images/symbols.svg#fire"></use></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="element-test section" id="elemento">
+      <div class="element-test__background" aria-hidden="true">
+        <span>ÁGUA</span><span>TERRA</span><span>FOGO</span><span>AR</span>
+      </div>
+      <div class="container element-test__inner">
+        <div class="element-test__copy reveal">
+          <p class="eyebrow">Confie no primeiro impulso</p>
+          <h2>Qual elemento vive em você?</h2>
+          <p>Escolha a qualidade que mais orienta suas decisões. O resultado muda a energia desta experiência.</p>
+        </div>
+        <div class="element-test__choices reveal" role="group" aria-label="Escolha uma qualidade">
+          <button type="button" data-element-choice="water"><small>Eu me adapto</small><strong>Fluidez</strong><svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#water"></use></svg></button>
+          <button type="button" data-element-choice="earth"><small>Eu permaneço</small><strong>Constância</strong><svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#earth"></use></svg></button>
+          <button type="button" data-element-choice="fire"><small>Eu transformo</small><strong>Vontade</strong><svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#fire"></use></svg></button>
+          <button type="button" data-element-choice="air"><small>Eu me liberto</small><strong>Leveza</strong><svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg></button>
+        </div>
+        <div class="element-result" aria-live="polite" hidden>
+          <button type="button" class="element-result__close" aria-label="Fechar resultado">×</button>
+          <svg viewBox="0 0 120 120"><use data-result-symbol href="assets/images/symbols.svg#air"></use></svg>
+          <p>Seu elemento é</p>
+          <strong data-result-name>Ar</strong>
+          <span data-result-text>Você encontra força na liberdade, na criatividade e em novos pontos de vista.</span>
+          <a data-result-link href="#nomades-do-ar">Conhecer sua nação <b aria-hidden="true">&gt;</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="finale__media">
+        <img src="assets/images/hero-poster.jpg" alt="" loading="lazy">
+      </div>
+      <div class="container finale__content reveal">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><use href="assets/images/symbols.svg#air"></use></svg>
+        <p class="eyebrow">A jornada nunca termina</p>
+        <h2>O equilíbrio não é um destino.<br><em>É uma escolha.</em></h2>
+        <a class="button button--primary" href="#inicio">Voltar ao começo <b aria-hidden="true">^</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="brand brand--footer" href="#inicio">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="assets/images/symbols.svg#air"></use></svg></span>
+        <span class="brand__text">AVATAR<small>O CICLO CONTINUA</small></span>
+      </a>
+      <p>Projeto acadêmico e não comercial inspirado em <em>Avatar: A Lenda de Aang</em>. Personagens e universo pertencem aos seus respectivos criadores e detentores de direitos.</p>
+      <span>Feito com equilíbrio entre HTML, CSS e JavaScript.</span>
+    </div>
+  </footer>
+
+  <dialog class="character-dialog" aria-labelledby="dialogName">
+    <div class="character-dialog__panel">
+      <button class="character-dialog__close" type="button" data-close-dialog aria-label="Fechar ficha">×</button>
+      <div class="character-dialog__visual" data-dialog-visual>
+        <span class="character-dialog__number" data-dialog-number>01</span>
+        <svg viewBox="0 0 320 420"><use data-dialog-portrait href="assets/images/characters.svg#aang"></use></svg>
+        <span class="character-dialog__element" data-dialog-element>Ar</span>
+      </div>
+      <div class="character-dialog__content">
+        <p class="eyebrow" data-dialog-kicker>O Avatar</p>
+        <h2 id="dialogName" data-dialog-name>Aang</h2>
+        <p class="character-dialog__summary" data-dialog-summary></p>
+        <dl class="character-dialog__facts">
+          <div><dt>Nação</dt><dd data-dialog-nation></dd></div>
+          <div><dt>Especialidade</dt><dd data-dialog-bending></dd></div>
+          <div><dt>Arma / recurso</dt><dd data-dialog-weapon></dd></div>
+        </dl>
+        <div class="character-dialog__arc">
+          <h3>Trajetória</h3>
+          <p data-dialog-arc></p>
+        </div>
+        <div class="character-dialog__skills" data-dialog-skills></div>
+        <div class="character-dialog__traits" data-dialog-traits></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="video-dialog" aria-label="Vídeo de Avatar">
+    <button class="video-dialog__close" type="button" data-close-video aria-label="Fechar vídeo">×</button>
+    <div class="video-dialog__frame">
+      <video controls playsinline poster="assets/images/hero-poster.jpg">
+        <source src="assets/video/avatar-hero.mp4" type="video/mp4">
+      </video>
+    </div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript">Ative o JavaScript para acessar filtros, fichas interativas e controles do vídeo. Todo o conteúdo principal continua disponível.</div>
+  </noscript>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
