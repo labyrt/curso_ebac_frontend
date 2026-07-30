@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FocusBoard: painel de produtividade criado com LESS, JavaScript e Grunt.">
+    <title>FocusBoard | Organize seu progresso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles/main.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="topbar__brand">
+                <div class="topbar__logo">F</div>
+                <div>
+                    <h1>FocusBoard</h1>
+                    <p>Pequenos passos, progresso visível.</p>
+                </div>
+            </div>
+            <div class="date-pill" id="current-date"></div>
+        </header>
+
+        <section class="hero">
+            <div class="hero__intro">
+                <span>Painel de produtividade</span>
+                <h2>Transforme planos em tarefas concluídas.</h2>
+                <p>Organize as prioridades do dia, acompanhe seu ritmo e mantenha o foco no que realmente importa.</p>
+            </div>
+            <aside class="progress-card">
+                <div class="progress-card__ring" id="progress-ring">
+                    <strong id="progress-value">0%</strong>
+                </div>
+                <h3>Progresso de hoje</h3>
+                <p id="progress-text">0 de 0 tarefas concluídas</p>
+            </aside>
+        </section>
+
+        <section class="workspace">
+            <aside class="composer">
+                <div class="section-heading">
+                    <h2>Nova tarefa</h2>
+                    <p>Registre uma ação objetiva para manter o ritmo.</p>
+                </div>
+
+                <form class="task-form" id="task-form">
+                    <label>
+                        O que precisa ser feito?
+                        <input id="task-title" type="text" maxlength="80" placeholder="Ex.: finalizar exercício" autocomplete="off" required>
+                    </label>
+                    <label>
+                        Categoria
+                        <input id="task-category" type="text" maxlength="30" placeholder="Ex.: Estudos" autocomplete="off">
+                    </label>
+                    <button type="submit">Adicionar ao painel</button>
+                </form>
+
+                <div class="tips">
+                    <h3>Dica rápida</h3>
+                    <p>Comece a descrição com um verbo: revisar, criar, testar ou publicar. Isso deixa a próxima ação mais clara.</p>
+                </div>
+            </aside>
+
+            <section class="task-panel">
+                <div class="task-panel__header">
+                    <div class="section-heading">
+                        <h2>Minhas tarefas</h2>
+                        <p>Clique no quadrado para marcar uma entrega.</p>
+                    </div>
+                    <div class="filters" aria-label="Filtros de tarefas">
+                        <button class="is-active" type="button" data-filter="all">Todas</button>
+                        <button type="button" data-filter="pending">Pendentes</button>
+                        <button type="button" data-filter="complete">Feitas</button>
+                    </div>
+                </div>
+
+                <ul class="task-list" id="task-list"></ul>
+                <p class="empty-state" id="empty-state">Nenhuma tarefa encontrada neste filtro.</p>
+            </section>
+        </section>
+    </main>
+
+    <script src="dist/scripts/main.min.js"></script>
+</body>
+</html>
