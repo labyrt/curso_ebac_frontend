@@ -1,0 +1,30 @@
+.products {
+    margin-top: (@espacamento-padrao * 5);
+    display: grid;
+    grid-template-columns: repeat(#grade[colunas-desktop], #grade[largura-desktop]);
+    column-gap: #grade[gap-desktop];
+    row-gap: 4%;
+    width: 100%;
+}
+
+.product-item {
+    img {
+        width: 100%;
+        border-radius: @raio-imagem;
+    }
+}
+
+.product-button {
+    display: block;
+    background-color: #cores[botao];
+    color: #cores[texto-claro];
+    text-align: center;
+    padding: @espacamento-padrao 0;
+    border-radius: @raio-botao;
+    margin-top: @espacamento-padrao;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #cores[botao-hover];
+    }
+}

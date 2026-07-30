@@ -1,0 +1,20 @@
+@media screen and @{breakpoint-tablet} {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(#grade[colunas-tablet], #grade[largura-tablet]);
+        column-gap: #grade[gap-tablet];
+    }
+}
+
+@media screen and @{breakpoint-mobile} {
+    .products {
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: (@espacamento-padrao * 4);
+    }
+}

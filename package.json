@@ -1,0 +1,13 @@
+{
+  "name": "exercicio-less",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "less": "lessc src/styles/main.less styles.css",
+    "less:watch": "less-watch-compiler src/styles styles.css main.less"
+  },
+  "devDependencies": {
+    "less": "^4.2.2",
+    "less-watch-compiler": "^1.16.3"
+  }
+}
