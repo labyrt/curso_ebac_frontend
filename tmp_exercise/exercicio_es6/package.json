@@ -1,0 +1,11 @@
+{
+  "name": "exercicio-es6",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exercício de ES6+ com array de objetos e filtro de alunos aprovados.",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  }
+}
