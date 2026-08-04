@@ -1,0 +1,4 @@
+ARQUIVO FALTANTE DA BRANCH exercicio_ts
+
+Envie apenas o arquivo .gitignore para a raiz da branch exercicio_ts.
+O arquivo LEIA-ME.txt é apenas uma instrução e não precisa ser enviado ao GitHub.
