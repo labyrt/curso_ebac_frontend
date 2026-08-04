@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demonstração interativa de funções tipadas em TypeScript." />
+    <title>Funções com TypeScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <span class="eyebrow">EBAC · TypeScript</span>
+        <h1>Funções simples,<br /><span>tipos bem definidos.</span></h1>
+        <p>Teste uma multiplicação e crie uma saudação usando as funções tipadas do exercício.</p>
+      </header>
+      <section class="cards" aria-label="Demonstrações TypeScript">
+        <article class="card">
+          <div class="heading"><span>01</span><div><h2>Multiplicação</h2><p>Dois números entram, um produto sai.</p></div></div>
+          <form id="multiplication-form">
+            <div class="field-row">
+              <label>Primeiro número<input id="first-number" type="number" value="6" step="any" required /></label>
+              <b aria-hidden="true">×</b>
+              <label>Segundo número<input id="second-number" type="number" value="7" step="any" required /></label>
+            </div>
+            <button type="submit">Calcular produto</button>
+          </form>
+          <output id="multiplication-result" class="result" aria-live="polite">6 × 7 = <strong>42</strong></output>
+        </article>
+        <article class="card accent">
+          <div class="heading"><span>02</span><div><h2>Saudação</h2><p>Uma mensagem personalizada.</p></div></div>
+          <form id="greeting-form">
+            <label>Como você se chama?<input id="name" type="text" value="Lucy" maxlength="60" required /></label>
+            <button type="submit">Criar saudação</button>
+          </form>
+          <output id="greeting-result" class="result" aria-live="polite">Olá Lucy</output>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>
