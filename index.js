@@ -9,8 +9,8 @@ const alunos = [
 ];
 
 // Retorna um novo array somente com os estudantes que alcançaram a média.
-const filtrarAlunosAprovados = (listaDeAlunos) =>
-  listaDeAlunos.filter(({ nota }) => nota >= 6);
+const filtrarAlunosAprovados = (listaDeAlunos, media = 6) =>
+  listaDeAlunos.filter(({ nota }) => nota >= media);
 
 const alunosAprovados = filtrarAlunosAprovados(alunos);
 

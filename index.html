@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lista interativa de estudantes aprovados usando JavaScript ES6+." />
+    <title>Painel de aprovação · ES6+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="hero">
+        <div><span class="eyebrow">JavaScript · ES6+</span><h1>Painel de<br />aprovação</h1><p>Altere a média e veja o método <code>filter()</code> atualizar a lista em tempo real.</p></div>
+        <div class="score-control">
+          <label for="minimum-score">Média mínima</label>
+          <output id="score-value" for="minimum-score">6,0</output>
+          <input id="minimum-score" type="range" min="0" max="10" value="6" step="0.5" />
+          <div class="range-labels"><span>0</span><span>10</span></div>
+        </div>
+      </header>
+      <section class="summary" aria-label="Resumo da turma">
+        <article><span>Total</span><strong id="total-count">6</strong></article>
+        <article><span>Aprovados</span><strong id="approved-count">4</strong></article>
+        <article><span>Maior nota</span><strong id="highest-score">9,2</strong></article>
+      </section>
+      <section class="table-card">
+        <div class="table-heading"><div><span class="status-dot"></span><h2>Estudantes aprovados</h2></div><span id="result-label">4 resultados</span></div>
+        <div class="table-scroll"><table><thead><tr><th>Estudante</th><th>Nota</th><th>Situação</th></tr></thead><tbody id="students-list"></tbody></table></div>
+        <p id="empty-state" class="empty-state" hidden>Nenhum estudante atingiu essa média.</p>
+      </section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
