@@ -1,0 +1,11 @@
+{
+  "name": "exercicio-sass",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "sass scss/styles.scss styles.css --style=compressed --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}
