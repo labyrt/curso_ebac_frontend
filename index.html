@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Loja responsiva desenvolvida para demonstrar organização e compilação de estilos com Sass.">
+  <title>Loja Responsiva com Sass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>EBAC Shoes</h1>
+      <nav><ul class="menu"><li><a href="#produtos">Produtos</a></li><li><a href="#sobre">Sobre</a></li></ul></nav>
+    </div>
+  </header>
+  <main>
+    <section id="produtos">
+      <div class="container">
+        <h2>Produtos em destaque</h2>
+        <ul class="products">
+          <li class="product-item"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="Tênis esportivo vermelho"><h3>Tênis Runner</h3><p>Conforto e leveza para acompanhar sua rotina.</p><a class="product-button" href="#">Ver detalhes</a></li>
+          <li class="product-item"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=80" alt="Tênis casual"><h3>Tênis Urban</h3><p>Design versátil para diferentes combinações.</p><a class="product-button" href="#">Ver detalhes</a></li>
+          <li class="product-item"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=80" alt="Tênis colorido"><h3>Tênis Color</h3><p>Cores vibrantes e acabamento contemporâneo.</p><a class="product-button" href="#">Ver detalhes</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="sobre"><div class="container"><h2>Sobre o exercício</h2><p>Layout responsivo construído com variáveis, módulos, aninhamento e media queries em Sass.</p></div></section>
+  </main>
+</body>
+</html>
