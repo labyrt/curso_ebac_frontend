@@ -28,6 +28,46 @@
       <p>Os estilos, scripts e imagens desta página passam pelas tarefas configuradas no <code>gulpfile.mjs</code>.</p>
     </header>
     <section class="gallery" aria-label="Imagens otimizadas">
+      <figure><img src="src/images/images/birds-g6b63afc7a_1920.jpg" alt="Pássaros"><figcaption>Pássaros</figcaption></figure>
+      <figure><img src="src/images/images/butterfly-g7f3546b64_1920.jpg" alt="Borboleta"><figcaption>Borboleta</figcaption></figure>
+      <figure><img src="src/images/images/hands-gc143a78ba_1920.png" alt="Mãos"><figcaption>Mãos</figcaption></figure>
+      <figure><img src="src/images/images/lilies-g19bcb21a4_1920.jpg" alt="Lírios"><figcaption>Lírios</figcaption></figure>
+      <figure><img src="src/images/images/street-gddeece843_1920.jpg" alt="Rua"><figcaption>Rua</figcaption></figure>
+    </section>
+  </main>
+  <script src="dist/js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demonstração do fluxo de automação com Gulp, Sass, Terser e otimização de imagens.">
+  <title>Automação com Gulp</title>
+  <link rel="stylesheet" href="dist/css/main.css">
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f4f1eb; color: #24211d; }
+    main { max-width: 1080px; margin: 0 auto; }
+    header { padding: 2rem 0 1rem; }
+    h1 { margin-bottom: .5rem; }
+    p { line-height: 1.6; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; padding: 1rem 0 2rem; }
+    figure { margin: 0; overflow: hidden; border-radius: 14px; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+    img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    figcaption { padding: .8rem 1rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p>Exercício EBAC · Build automatizado</p>
+      <h1>Galeria processada com Gulp</h1>
+      <p>Os estilos, scripts e imagens desta página passam pelas tarefas configuradas no <code>gulpfile.mjs</code>.</p>
+    </header>
+    <section class="gallery" aria-label="Imagens otimizadas">
       <figure><img src="dist/images/images/birds-g6b63afc7a_1920.jpg" alt="Pássaros"><figcaption>Pássaros</figcaption></figure>
       <figure><img src="dist/images/images/butterfly-g7f3546b64_1920.jpg" alt="Borboleta"><figcaption>Borboleta</figcaption></figure>
       <figure><img src="dist/images/images/hands-gc143a78ba_1920.png" alt="Mãos"><figcaption>Mãos</figcaption></figure>
