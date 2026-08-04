@@ -1,35 +1,21 @@
-# Exercício de TypeScript
+# Exercício TypeScript corrigido
 
-Projeto completo com duas funções tipadas e uma interface web interativa:
+- Multiplicação com valores digitados pelo usuário
+- Saudação com nome personalizado
+- Formulários sem recarregar a página
+- Layout responsivo
+- Funções tipadas em TypeScript
+- `main.js` incluído para funcionar também em hospedagem estática sem build
 
-- `multiplicar(numero1, numero2)`: recebe dois números e retorna o produto;
-- `saudar(nome)`: recebe um nome e retorna uma saudação personalizada.
-
-## Executar no navegador
+## Executar
 
 ```bash
 npm install
 npm run dev
 ```
 
-Para criar a versão de produção usada pela Vercel:
-
-```bash
-npm run build
-```
-
-## Executar no terminal
-
-```bash
-npm start
-```
-
-Para verificar somente a tipagem:
+## Validar TypeScript
 
 ```bash
 npm run check
 ```
-
-## Deploy na Vercel
-
-O projeto está configurado para Vite. A Vercel executa `npm run build` e publica a pasta `dist` automaticamente.
