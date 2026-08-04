@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exercício de boas práticas CSS com metodologia BEM e imagens SVG locais.">
+    <title>Exercício boas práticas de CSS</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main class="products">
+        <article class="products__item">
+            <svg class="products__image" viewBox="0 0 100 100" role="img" aria-labelledby="produto-azul">
+                <title id="produto-azul">Produto azul</title>
+                <rect width="100" height="100" rx="16" fill="#dbeafe"/>
+                <circle cx="50" cy="42" r="24" fill="#2563eb"/>
+                <path d="M28 78h44" stroke="#1e3a8a" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+            <h2 class="products__name">Produto Essencial</h2>
+            <p class="products__description">Solução simples, clara e bem estruturada.</p>
+        </article>
+
+        <article class="products__item products__item--featured">
+            <svg class="products__image" viewBox="0 0 100 100" role="img" aria-labelledby="produto-destaque">
+                <title id="produto-destaque">Produto em destaque</title>
+                <rect width="100" height="100" rx="16" fill="#fef3c7"/>
+                <path d="M50 18l9 20 22 2-17 15 5 22-19-11-19 11 5-22-17-15 22-2z" fill="#f59e0b"/>
+            </svg>
+            <h2 class="products__name">Produto Destaque</h2>
+            <p class="products__description">A opção principal, com tratamento visual especial.</p>
+        </article>
+
+        <article class="products__item">
+            <svg class="products__image" viewBox="0 0 100 100" role="img" aria-labelledby="produto-verde">
+                <title id="produto-verde">Produto verde</title>
+                <rect width="100" height="100" rx="16" fill="#dcfce7"/>
+                <path d="M25 62c18-36 43-38 52-38-1 22-11 48-38 48-7 0-12-4-14-10z" fill="#16a34a"/>
+                <path d="M31 68c12-14 24-24 39-34" stroke="#166534" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <h2 class="products__name">Produto Sustentável</h2>
+            <p class="products__description">Identidade visual leve e foco em boas escolhas.</p>
+        </article>
+    </main>
+</body>
+</html>
