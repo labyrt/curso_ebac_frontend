@@ -1,0 +1,14 @@
+{
+  "name": "exercicio-cypress-ebac",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exercício EBAC de testes E2E com Cypress para a Agenda de Contatos.",
+  "scripts": {
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "15.19.0"
+  }
+}
