@@ -37,6 +37,8 @@ export const CartProvider = ({ children }) => {
     )
   }
 
+  const clearCart = () => setItems([])
+
   const count = items.reduce((sum, item) => sum + item.quantity, 0)
   const total = items.reduce(
     (sum, item) => sum + Number(item.price || 0) * item.quantity,
@@ -53,7 +55,8 @@ export const CartProvider = ({ children }) => {
       closeCart: () => setIsOpen(false),
       addItem,
       removeItem,
-      changeQuantity
+      changeQuantity,
+      clearCart
     }),
     [items, count, total, isOpen]
   )
