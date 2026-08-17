@@ -59,36 +59,42 @@ export const menuItems = [
   {
     id: 1,
     name: 'Pizza Marguerita',
+    price: 60.9,
     image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=85',
     description: 'Molho de tomate italiano, muçarela, manjericão fresco e azeite extra virgem.'
   },
   {
     id: 2,
     name: 'Pizza Pepperoni',
+    price: 62.9,
     image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=85',
     description: 'Molho de tomate, muçarela e pepperoni levemente picante em massa de longa fermentação.'
   },
   {
     id: 3,
     name: 'Ravioli da Casa',
+    price: 54.9,
     image: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=85',
     description: 'Massa fresca recheada, finalizada com molho artesanal e queijo parmesão.'
   },
   {
     id: 4,
     name: 'Fettuccine',
+    price: 52.9,
     image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=85',
     description: 'Fettuccine artesanal servido com molho cremoso, parmesão e ervas frescas.'
   },
   {
     id: 5,
     name: 'Bruschetta',
+    price: 29.9,
     image: 'https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=800&q=85',
     description: 'Pão italiano tostado, tomates frescos, manjericão, alho e azeite extra virgem.'
   },
   {
     id: 6,
     name: 'Tiramisù',
+    price: 32.9,
     image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=85',
     description: 'Clássica sobremesa italiana com café, creme de mascarpone e cacau.'
   }
