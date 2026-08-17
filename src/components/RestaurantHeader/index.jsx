@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import Logo from '../Logo'
+import BrandLogo from '../BrandLogo'
+import { useCart } from '../../context/CartContext'
 import { Container } from '../../styles/shared'
 
 const HeaderBar = styled.header`
   min-height: 186px;
-  background-color: var(--cor-secundaria);
-  background-image:
-    radial-gradient(circle at 20% 40%, rgba(230, 103, 103, 0.07) 0 5px, transparent 6px),
-    linear-gradient(45deg, transparent 48%, rgba(230, 103, 103, 0.035) 49% 51%, transparent 52%);
-  background-size: 80px 80px, 160px 160px;
+  background-color: #ffebd9;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23e66767' fill-opacity='.075'%3E%3Cpath d='M18 7h4v20h4V7h4v20h4V7h4v24c0 7-4 11-10 12v34h-8V43c-6-1-10-5-10-12V7h4v20h4V7z'/%3E%3Cpath d='M72 7c8 4 13 12 13 22v22h-8v27h-8V15c0-4 1-6 3-8z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 120px;
 `
 
 const HeaderContent = styled(Container)`
@@ -23,27 +22,41 @@ const HeaderContent = styled(Container)`
 
 const NavLink = styled(Link)`
   font-size: 18px;
+  line-height: 21px;
   font-weight: 900;
+`
 
-  &:last-child {
-    justify-self: end;
-  }
+const CartButton = styled.button`
+  justify-self: end;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #e66767;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 900;
+  cursor: pointer;
 
   @media (max-width: 640px) {
     font-size: 13px;
+    line-height: 16px;
   }
 `
 
-const RestaurantHeader = () => (
-  <HeaderBar>
-    <HeaderContent>
-      <NavLink to="/">Restaurantes</NavLink>
-      <Logo />
-      <NavLink to="#" onClick={(event) => event.preventDefault()}>
-        0 produto(s) no carrinho
-      </NavLink>
-    </HeaderContent>
-  </HeaderBar>
-)
+const RestaurantHeader = () => {
+  const { count, openCart } = useCart()
+
+  return (
+    <HeaderBar>
+      <HeaderContent>
+        <NavLink to="/">Restaurantes</NavLink>
+        <BrandLogo />
+        <CartButton type="button" onClick={openCart}>
+          {count} produto(s) no carrinho
+        </CartButton>
+      </HeaderContent>
+    </HeaderBar>
+  )
+}
 
 export default RestaurantHeader
