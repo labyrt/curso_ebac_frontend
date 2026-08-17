@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
+import FigmaMenuCard from '../../components/FigmaMenuCard'
+import FigmaRestaurantHero from '../../components/FigmaRestaurantHero'
 import Footer from '../../components/Footer'
-import MenuCard from '../../components/MenuCard'
 import RestaurantHeader from '../../components/RestaurantHeader'
-import RestaurantHero from '../../components/RestaurantHero'
 import { menuItems, restaurants } from '../../data/restaurants'
 import { Container } from '../../styles/shared'
 
@@ -28,16 +28,16 @@ const MenuGrid = styled(Container)`
 
 const Restaurant = () => {
   const { id } = useParams()
-  const restaurant = restaurants.find((item) => item.id === Number(id)) || restaurants[1]
+  const restaurant = restaurants.find((item) => item.id === Number(id)) || restaurants[0]
 
   return (
     <>
       <RestaurantHeader />
-      <RestaurantHero restaurant={restaurant} />
+      <FigmaRestaurantHero restaurant={restaurant} />
       <MenuSection>
         <MenuGrid>
           {menuItems.map((item) => (
-            <MenuCard key={item.id} item={item} />
+            <FigmaMenuCard key={item.id} item={item} />
           ))}
         </MenuGrid>
       </MenuSection>
