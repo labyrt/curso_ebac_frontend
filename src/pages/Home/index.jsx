@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
+import FigmaRestaurantCard from '../../components/FigmaRestaurantCard'
 import Footer from '../../components/Footer'
 import HomeHero from '../../components/HomeHero'
-import RestaurantCard from '../../components/RestaurantCard'
 import { restaurants } from '../../data/restaurants'
 import { Container } from '../../styles/shared'
 
@@ -27,7 +27,7 @@ const Home = () => (
     <RestaurantSection>
       <RestaurantGrid>
         {restaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+          <FigmaRestaurantCard key={restaurant.id} restaurant={restaurant} />
         ))}
       </RestaurantGrid>
     </RestaurantSection>
