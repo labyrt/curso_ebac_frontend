@@ -1,9 +1,9 @@
-name: Deploy eFood to GitHub Pages
+name: Deploy eFood Parte 3 to GitHub Pages
 
 on:
   push:
     branches:
-      - react_router_efood
+      - efood_parte_3_redux_carrinho
   workflow_dispatch:
 
 permissions:
@@ -19,26 +19,54 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Parte 3
         uses: actions/checkout@v6
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
+          cache: npm
 
-      - name: Install dependencies
-        run: npm install
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
-      - name: Build for GitHub Pages
+      - name: Install Parte 3 dependencies
+        run: npm ci
+
+      - name: Build Parte 3
+        run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          GITHUB_PAGES_BASE: '/curso_ebac_frontend/efood-parte-3/'
+
+      - name: Checkout previous eFood delivery
+        uses: actions/checkout@v6
+        with:
+          ref: react_router_efood
+          path: previous-efood
+
+      - name: Install previous delivery dependencies
+        working-directory: previous-efood
+        run: npm install --no-audit --no-fund
+
+      - name: Build previous delivery
+        working-directory: previous-efood
         run: npm run build
         env:
           GITHUB_PAGES: 'true'
 
+      - name: Assemble Pages without replacing previous delivery
+        run: |
+          mkdir -p pages-artifact/efood-parte-3
+          cp -a previous-efood/dist/. pages-artifact/
+          cp -a dist/. pages-artifact/efood-parte-3/
+          touch pages-artifact/.nojekyll
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: pages-artifact
 
   deploy:
     environment:
