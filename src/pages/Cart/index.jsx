@@ -133,14 +133,26 @@ const Total = styled.p`
   font-weight: 900;
 `
 
-const ContinueLink = styled(Link)`
+const PrimaryLink = styled(Link)`
   display: block;
   width: 100%;
-  padding: 8px;
+  padding: 9px;
   background: #ffebd9;
   color: #e66767;
   font-size: 14px;
   font-weight: 900;
+  text-align: center;
+`
+
+const SecondaryLink = styled(Link)`
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid #ffebd9;
+  color: #ffebd9;
+  font-size: 14px;
+  font-weight: 700;
   text-align: center;
 `
 
@@ -178,7 +190,7 @@ const Cart = () => {
             {items.length === 0 ? (
               <Empty>
                 <p>Seu carrinho está vazio.</p>
-                <ContinueLink to="/">Escolher um restaurante</ContinueLink>
+                <PrimaryLink to="/">Escolher um restaurante</PrimaryLink>
               </Empty>
             ) : (
               <Items aria-label="Produtos no carrinho">
@@ -224,7 +236,8 @@ const Cart = () => {
                 <span>Valor total</span>
                 <span>{formatPrice(total)}</span>
               </Total>
-              <ContinueLink to="/">Adicionar mais produtos</ContinueLink>
+              <PrimaryLink to="/checkout">Continuar com a entrega</PrimaryLink>
+              <SecondaryLink to="/">Adicionar mais produtos</SecondaryLink>
             </Summary>
           ) : null}
         </CartLayout>

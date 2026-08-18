@@ -1,12 +1,12 @@
-name: Validate eFood Parte 3
+name: Validate eFood Parte 4
 
 on:
   push:
     branches:
-      - efood_parte_3_redux_carrinho
+      - efood_parte_4_checkout
   pull_request:
     branches:
-      - efood_parte_3_redux_carrinho
+      - efood_parte_4_checkout
 
 permissions:
   contents: read
@@ -16,15 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 24
+          cache: npm
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci
 
       - name: Build
         run: npm run build
