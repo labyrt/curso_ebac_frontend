@@ -1,9 +1,10 @@
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import BrandLogo from '../BrandLogo'
-import { useCart } from '../../context/CartContext'
+import { selectCartCount } from '../../store/reducers/cart'
 import { Container } from '../../styles/shared'
+import BrandLogo from '../BrandLogo'
 
 const HeaderBar = styled.header`
   min-height: 186px;
@@ -26,16 +27,18 @@ const NavLink = styled(Link)`
   font-weight: 900;
 `
 
-const CartButton = styled.button`
+const CartLink = styled(Link)`
   justify-self: end;
-  border: 0;
-  padding: 0;
-  background: transparent;
   color: #e66767;
   font-size: 18px;
   line-height: 21px;
   font-weight: 900;
-  cursor: pointer;
+  text-align: right;
+
+  &:focus-visible {
+    outline: 3px solid #e66767;
+    outline-offset: 4px;
+  }
 
   @media (max-width: 640px) {
     font-size: 13px;
@@ -44,16 +47,16 @@ const CartButton = styled.button`
 `
 
 const RestaurantHeader = () => {
-  const { count, openCart } = useCart()
+  const count = useSelector(selectCartCount)
 
   return (
     <HeaderBar>
       <HeaderContent>
         <NavLink to="/">Restaurantes</NavLink>
         <BrandLogo />
-        <CartButton type="button" onClick={openCart}>
+        <CartLink to="/carrinho" aria-label={`Abrir carrinho com ${count} produtos`}>
           {count} produto(s) no carrinho
-        </CartButton>
+        </CartLink>
       </HeaderContent>
     </HeaderBar>
   )

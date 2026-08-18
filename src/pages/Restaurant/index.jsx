@@ -85,6 +85,10 @@ const Restaurant = () => {
     )
   }
 
+  const selectProduct = (item) => {
+    setSelectedProduct({ ...item, restaurantId: restaurant.id })
+  }
+
   return (
     <>
       <RestaurantHeader />
@@ -92,7 +96,7 @@ const Restaurant = () => {
       <MenuSection>
         <MenuGrid>
           {restaurant.cardapio.map((item) => (
-            <FigmaMenuCard key={item.id} item={item} onSelect={setSelectedProduct} />
+            <FigmaMenuCard key={item.id} item={item} onSelect={selectProduct} />
           ))}
         </MenuGrid>
       </MenuSection>

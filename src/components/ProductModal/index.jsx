@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { useCart } from '../../context/CartContext'
+import { addItem } from '../../store/reducers/cart'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -127,7 +129,8 @@ const formatPrice = (value) =>
   })
 
 const ProductModal = ({ product, onClose }) => {
-  const { addItem } = useCart()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const closeButtonRef = useRef(null)
 
   useEffect(() => {
@@ -152,13 +155,14 @@ const ProductModal = ({ product, onClose }) => {
   if (!product) return null
 
   const addToCart = () => {
-    addItem({
-      ...product,
-      name: product.nome,
-      image: product.foto,
-      price: product.preco
-    })
+    dispatch(
+      addItem({
+        ...product,
+        cartId: `${product.restaurantId}-${product.id}`
+      })
+    )
     onClose()
+    navigate('/carrinho')
   }
 
   return (

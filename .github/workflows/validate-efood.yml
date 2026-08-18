@@ -1,12 +1,12 @@
-name: Validate eFood Parte 2
+name: Validate eFood Parte 3
 
 on:
   push:
     branches:
-      - efood_parte_2_ajax_modal
+      - efood_parte_3_redux_carrinho
   pull_request:
     branches:
-      - efood_parte_2_ajax_modal
+      - efood_parte_3_redux_carrinho
 
 permissions:
   contents: read

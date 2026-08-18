@@ -1,22 +1,26 @@
-# eFood — Parte 2: AJAX e modal de produto
+# eFood — Parte 3: carrinho com Redux
 
-Segunda etapa do projeto eFood da EBAC, criada em uma branch separada para preservar integralmente a entrega anterior.
+Terceira etapa do projeto eFood da EBAC. Esta versão parte da entrega com AJAX e modal de produto e acrescenta uma página de carrinho gerenciada pelo Redux Toolkit.
 
 ## Requisitos atendidos
 
 - layout baseado no arquivo oficial do Figma;
-- restaurantes e cardápios carregados por AJAX com a Fetch API;
-- integração com `https://api-ebac.vercel.app/api/efood/restaurantes`;
-- estados de carregamento, erro e restaurante não encontrado;
-- modal de produto com foto, nome, descrição, porção e preço;
-- fechamento pelo botão, clique no fundo ou tecla `Esc`;
-- botão para adicionar o item ao carrinho;
-- layout responsivo para desktop, tablet e celular.
+- restaurantes e cardápios carregados pela API da EBAC;
+- modal de detalhes do produto;
+- página dedicada ao carrinho em `/carrinho`;
+- estado global com Redux Toolkit;
+- integração React/Redux com `Provider`, `useSelector` e `useDispatch`;
+- adição, remoção e alteração de quantidade;
+- contador de produtos no cabeçalho;
+- soma automática de preço × quantidade;
+- layout responsivo.
 
 ## Tecnologias
 
 - React
 - React Router DOM
+- Redux Toolkit
+- React Redux
 - Styled Components
 - Vite
 - Fetch API
@@ -36,5 +40,6 @@ npm run build
 
 ## Rotas
 
-- `/` — restaurantes recebidos da API;
-- `/restaurante/:id` — capa e cardápio do restaurante selecionado.
+- `/` — restaurantes;
+- `/restaurante/:id` — cardápio e modal de produto;
+- `/carrinho` — produtos selecionados e valor total.
