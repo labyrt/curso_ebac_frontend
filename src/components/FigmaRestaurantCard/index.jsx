@@ -34,6 +34,7 @@ const Tag = styled.span`
   font-size: 12px;
   line-height: 14px;
   font-weight: 700;
+  text-transform: capitalize;
 `
 
 const Content = styled.div`
@@ -86,29 +87,26 @@ const More = styled(Link)`
   font-weight: 700;
 `
 
-const FigmaRestaurantCard = ({ restaurant }) => {
-  const title = restaurant.title || restaurant.name
-  const featured = restaurant.featured || restaurant.highlighted || restaurant.isFeatured
-
-  return (
-    <Card>
-      <ImageWrap>
-        <Image src={restaurant.image} alt={title} />
-        <Tags>
-          {featured && <Tag>Destaque da semana</Tag>}
-          {restaurant.category && <Tag>{restaurant.category}</Tag>}
-        </Tags>
-      </ImageWrap>
-      <Content>
-        <Heading>
-          <Title>{title}</Title>
-          <Rating>{restaurant.rating}</Rating>
-        </Heading>
-        <Description>{restaurant.description}</Description>
-        <More to={`/restaurante/${restaurant.id}`}>Saiba mais</More>
-      </Content>
-    </Card>
-  )
-}
+const FigmaRestaurantCard = ({ restaurant }) => (
+  <Card>
+    <ImageWrap>
+      <Image src={restaurant.capa} alt={restaurant.titulo} loading="lazy" />
+      <Tags>
+        {restaurant.destacado && <Tag>Destaque da semana</Tag>}
+        <Tag>{restaurant.tipo}</Tag>
+      </Tags>
+    </ImageWrap>
+    <Content>
+      <Heading>
+        <Title>{restaurant.titulo}</Title>
+        <Rating aria-label={`Avaliação ${restaurant.avaliacao} de 5`}>
+          {restaurant.avaliacao}
+        </Rating>
+      </Heading>
+      <Description>{restaurant.descricao}</Description>
+      <More to={`/restaurante/${restaurant.id}`}>Saiba mais</More>
+    </Content>
+  </Card>
+)
 
 export default FigmaRestaurantCard

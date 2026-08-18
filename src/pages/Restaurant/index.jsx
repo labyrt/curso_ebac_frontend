@@ -1,11 +1,13 @@
+import { useCallback, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 import FigmaMenuCard from '../../components/FigmaMenuCard'
 import FigmaRestaurantHero from '../../components/FigmaRestaurantHero'
 import Footer from '../../components/Footer'
+import ProductModal from '../../components/ProductModal'
 import RestaurantHeader from '../../components/RestaurantHeader'
-import { menuItems, restaurants } from '../../data/restaurants'
+import { fetchRestaurants } from '../../services/api'
 import { Container } from '../../styles/shared'
 
 const MenuSection = styled.main`
@@ -26,9 +28,62 @@ const MenuGrid = styled(Container)`
   }
 `
 
+const Status = styled(Container)`
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  color: #e66767;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+`
+
 const Restaurant = () => {
   const { id } = useParams()
-  const restaurant = restaurants.find((item) => item.id === Number(id)) || restaurants[0]
+  const [restaurant, setRestaurant] = useState(null)
+  const [selectedProduct, setSelectedProduct] = useState(null)
+  const [status, setStatus] = useState('loading')
+  const closeModal = useCallback(() => setSelectedProduct(null), [])
+
+  useEffect(() => {
+    const controller = new AbortController()
+
+    fetchRestaurants(controller.signal)
+      .then((data) => {
+        const currentRestaurant = data.find((item) => item.id === Number(id))
+        setRestaurant(currentRestaurant || null)
+        setStatus(currentRestaurant ? 'success' : 'not-found')
+      })
+      .catch((error) => {
+        if (error.name !== 'AbortError') setStatus('error')
+      })
+
+    return () => controller.abort()
+  }, [id])
+
+  if (status === 'loading') {
+    return (
+      <>
+        <RestaurantHeader />
+        <Status aria-live="polite">Carregando cardápio...</Status>
+        <Footer />
+      </>
+    )
+  }
+
+  if (status !== 'success') {
+    return (
+      <>
+        <RestaurantHeader />
+        <Status role="alert">
+          {status === 'not-found'
+            ? 'Restaurante não encontrado.'
+            : 'Não foi possível carregar o cardápio. Tente novamente mais tarde.'}
+        </Status>
+        <Footer />
+      </>
+    )
+  }
 
   return (
     <>
@@ -36,12 +91,13 @@ const Restaurant = () => {
       <FigmaRestaurantHero restaurant={restaurant} />
       <MenuSection>
         <MenuGrid>
-          {menuItems.map((item) => (
-            <FigmaMenuCard key={item.id} item={item} />
+          {restaurant.cardapio.map((item) => (
+            <FigmaMenuCard key={item.id} item={item} onSelect={setSelectedProduct} />
           ))}
         </MenuGrid>
       </MenuSection>
       <Footer />
+      <ProductModal product={selectedProduct} onClose={closeModal} />
     </>
   )
 }

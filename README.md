@@ -1,17 +1,17 @@
-# eFood — React, Styled Components e React Router
+# eFood — Parte 2: AJAX e modal de produto
 
-Projeto desenvolvido para o exercício da EBAC com base no layout **eFood** fornecido em Figma.
+Segunda etapa do projeto eFood da EBAC, criada em uma branch separada para preservar integralmente a entrega anterior.
 
 ## Requisitos atendidos
 
-- Projeto criado com React
-- Estilização feita com Styled Components
-- Navegação feita com React Router
-- Página inicial com listagem de restaurantes
-- Página interna de restaurante
-- Componentes reutilizáveis
-- Layout responsivo
-- Configuração de SPA para publicação na Vercel
+- layout baseado no arquivo oficial do Figma;
+- restaurantes e cardápios carregados por AJAX com a Fetch API;
+- integração com `https://api-ebac.vercel.app/api/efood/restaurantes`;
+- estados de carregamento, erro e restaurante não encontrado;
+- modal de produto com foto, nome, descrição, porção e preço;
+- fechamento pelo botão, clique no fundo ou tecla `Esc`;
+- botão para adicionar o item ao carrinho;
+- layout responsivo para desktop, tablet e celular.
 
 ## Tecnologias
 
@@ -19,6 +19,7 @@ Projeto desenvolvido para o exercício da EBAC com base no layout **eFood** forn
 - React Router DOM
 - Styled Components
 - Vite
+- Fetch API
 
 ## Como executar
 
@@ -27,51 +28,13 @@ npm install
 npm run dev
 ```
 
-Também é possível usar:
-
-```bash
-npm start
-```
-
 ## Build
 
 ```bash
 npm run build
 ```
 
-A pasta gerada será `dist`.
-
 ## Rotas
 
-- `/` — página inicial
-- `/restaurante/:id` — página do restaurante
-
-## Estrutura
-
-```text
-src/
-├── components/
-│   ├── Footer/
-│   ├── HomeHero/
-│   ├── Logo/
-│   ├── MenuCard/
-│   ├── RestaurantCard/
-│   ├── RestaurantHeader/
-│   └── RestaurantHero/
-├── data/
-│   └── restaurants.js
-├── pages/
-│   ├── Home/
-│   └── Restaurant/
-├── styles/
-│   ├── GlobalStyle.js
-│   └── shared.js
-├── App.jsx
-└── main.jsx
-```
-
-## Vercel
-
-O arquivo `vercel.json` já está incluído para que o React Router funcione corretamente ao acessar ou atualizar uma rota interna.
-
-Na Vercel, o projeto deve ser detectado como **Vite** e usar `dist` como diretório de saída.
+- `/` — restaurantes recebidos da API;
+- `/restaurante/:id` — capa e cardápio do restaurante selecionado.

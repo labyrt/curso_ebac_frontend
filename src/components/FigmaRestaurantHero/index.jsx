@@ -30,6 +30,7 @@ const Category = styled.p`
   font-size: 32px;
   line-height: 38px;
   font-weight: 100;
+  text-transform: capitalize;
 `
 
 const Title = styled.h1`
@@ -39,10 +40,10 @@ const Title = styled.h1`
 `
 
 const FigmaRestaurantHero = ({ restaurant }) => (
-  <Hero $image={restaurant.image}>
+  <Hero $image={restaurant.capa}>
     <Content>
-      <Category>{restaurant.category}</Category>
-      <Title>{restaurant.title || restaurant.name}</Title>
+      <Category>{restaurant.tipo}</Category>
+      <Title>{restaurant.titulo}</Title>
     </Content>
   </Hero>
 )
